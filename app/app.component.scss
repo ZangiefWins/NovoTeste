@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+    .rkt-tab-group {
+        position: relative;
+
+        .rkt-tab-group-items {
+            display: inline-grid;
+            grid-auto-flow: column;
+            grid-auto-columns: 1fr;
+            border: 1px solid grey;
+            border-radius: 20px;
+            padding: 8px 0;
+
+            .rkt-tab-group-item {
+                padding: 0 16px 0 17px;
+                color: grey;
+                cursor: pointer;
+                transition: all 250ms;
+
+                &:not(:first-of-type) {
+                    border-left: 1px solid grey;
+                }
+
+                &.active {
+                    color: orange;
+                }
+            }
+        }
+
+        .active-indicator {
+            height: 100%;
+            border: 2px solid orange;
+            width: 100%;
+            border-radius: 20px;
+            position: absolute;
+            transition: left 250ms;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+
+            &.hidden {
+                display: none;
+            }
+        }
+    }
+}

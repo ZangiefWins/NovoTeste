@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="rkt-tab-group" #group>
+    <div class="rkt-tab-group-items">
+      <div class="rkt-tab-group-item" *ngFor="let label of labels; index as i" (click)="selectElement(i)"
+        [class.active]="i == selectedIndex">
+        {{label}}
+      </div>
+    </div>
+
+    <div class="active-indicator" #activeIndicator [class.hidden]="selectedIndex == null">
+    </div>
+  </div>
+</div>
